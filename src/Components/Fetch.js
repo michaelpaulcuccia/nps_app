@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Activities from './Activities';
 
 const Fetch = ({ stateAbrv }) => {
 
     const [data, setData] = useState([]);
+    const [actv, setActv] = useState([]);
+    const [showActivities, setShowActivities] = useState(false)
 
     const url = `https://developer.nps.gov/api/v1/parks?stateCode=${stateAbrv}&api_key=`;
     const key = process.env.REACT_APP_API_KEY;
@@ -22,11 +25,8 @@ const Fetch = ({ stateAbrv }) => {
 
     const handleClick = (arg) => {
         console.log(arg.activities)
-        //TO DO...
-        /*
-        set to State, pass state to activities component,
-        pull out 'name' values and display in a map
-        */
+        setActv(arg.activities)
+        setShowActivities(true)
     }
 
     return (
@@ -47,6 +47,13 @@ const Fetch = ({ stateAbrv }) => {
                     </li>
                 ))}
             </ul>
+
+            {showActivities && (
+                <Activities
+                actv={actv}
+                />
+            )}
+
         </div>
     )
 }
