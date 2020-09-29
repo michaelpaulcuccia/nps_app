@@ -1,18 +1,20 @@
 import React from 'react'
 
-const Activities = ({actv}) => {
-
-    console.log(actv)
-    //pull out 'name' values and display in a map
+const Activities = ({ actv, fullName }) => {
 
     return (
         <div>
-            <h3>Activities</h3>
-            {actv.map(activity =>(
-                <li key={activity.name}>
-                    {activity.name}
-                </li>
-            ))}
+            <p className="label_text">Activities at {fullName} </p>
+            <div className='list_container'>
+                <ul>
+                    {actv.map(activity => (
+                        <li key={activity.name}>
+                            {activity.name}
+                        </li>
+                    ))}
+                </ul>
+
+            </div>
         </div>
     )
 }

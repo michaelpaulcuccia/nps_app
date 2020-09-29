@@ -1,0 +1,15 @@
+.label_text {
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.list_container {
+    display: flex;
+    justify-content: center;
+}
+
+.list_content {
+    font-size: 14;
+}

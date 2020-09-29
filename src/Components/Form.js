@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Fetch from './Fetch';
+import '../Styles/FormStyle.css'
 
 const Form = () => {
 
@@ -15,7 +16,12 @@ const Form = () => {
 
         <div>
 
-            <form onChange={handleSubmit}>
+        
+        <div className='main_container'>
+
+            <form 
+            onChange={handleSubmit}
+            >
 
                 <span>
                     <p className='label_text'>Select State</p>
@@ -77,7 +83,9 @@ const Form = () => {
 
             </form>
 
-            {showFetch && (
+        </div>
+
+        {showFetch && (
                 <Fetch
                 stateAbrv={stateAbrv}
                 />

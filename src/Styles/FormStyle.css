@@ -1,0 +1,9 @@
+.main_container {
+    display: flex;
+    justify-content: center;
+}
+
+.label_text {
+    font-size: 18px;
+    font-weight: bold;
+}
